@@ -58,39 +58,37 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: real product video + real packaging */}
+          {/* Right: real product video + real packaging — equal widths, equal heights */}
           <div className="relative">
-            <div className="grid grid-cols-2 gap-5">
-              <div className="overflow-hidden rounded-3xl border border-gold/30 shadow-2xl">
+            <div className="grid grid-cols-2 items-stretch gap-4">
+              <div className="aspect-[3/4] overflow-hidden rounded-3xl border border-gold/30 shadow-2xl">
                 <video
                   src="/videos/hero-jar.mp4"
                   autoPlay
                   muted
                   loop
                   playsInline
-                  className="aspect-[9/16] w-full object-cover"
+                  className="h-full w-full object-cover"
                 />
               </div>
-              <div className="flex flex-col gap-5">
-                <div className="relative flex-1 overflow-hidden rounded-3xl border border-gold/30 shadow-2xl">
+              <div className="flex min-h-0 flex-col gap-4">
+                <div className="relative min-h-0 flex-1 overflow-hidden rounded-3xl border border-gold/30 shadow-2xl">
                   <Image
                     src="/images/insta-box.jpg"
                     alt="So'Lit luxury candle gift box"
-                    width={512}
-                    height={435}
-                    className="h-full w-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                   <span className="absolute left-3 top-3 rounded-full bg-espresso/85 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-gold-light backdrop-blur">
                     Real product
                   </span>
                 </div>
-                <div className="overflow-hidden rounded-3xl border border-gold/30 shadow-2xl">
+                <div className="relative min-h-0 flex-1 overflow-hidden rounded-3xl border border-gold/30 shadow-2xl">
                   <Image
                     src="/images/insta-basket.jpg"
                     alt="So'Lit candle in a cosy gift basket"
-                    width={360}
-                    height={640}
-                    className="aspect-[9/14] w-full object-cover"
+                    fill
+                    className="object-cover"
                   />
                 </div>
               </div>
