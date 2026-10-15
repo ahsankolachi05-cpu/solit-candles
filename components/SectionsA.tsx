@@ -3,11 +3,11 @@ import Image from "next/image";
 /* ---------- Marquee ---------- */
 export function Marquee() {
   const items = [
-    "Gen Z approved",
-    "High fragrance load",
+    "Handcrafted in Ireland",
+    "100% soy wax",
+    "High-throw fragrance",
     "240g of glow",
-    "Free UK shipping",
-    "Luxury feel",
+    "Free shipping",
     "8 candles · £22.99",
   ];
   const row = [...items, ...items];
@@ -26,10 +26,10 @@ export function Marquee() {
 
 /* ---------- Collection ---------- */
 const collectionCards = [
-  { n: "01", title: "The Cloud Nine Duo", desc: "Two dreamy whites to start your glow-up ritual.", tag: "Bestseller*" },
-  { n: "02", title: "The Golden Hour Duo", desc: "Warm, radiant scents for slow golden evenings.", tag: "New*" },
-  { n: "03", title: "The After Dark Duo", desc: "Bold night-time fragrances with main-character energy.", tag: "New*" },
-  { n: "04", title: "The Soft Life Duo", desc: "Calm, cosy luxury for self-care Sundays.", tag: "Limited*" },
+  { n: "01", title: "Citrus Rituals ×2", desc: "The fresh-start scent, doubled — for mornings that mean business. 🍊", tag: "Bestseller" },
+  { n: "02", title: "Velvet Coconut ×2", desc: "Smooth, creamy indulgence — your cosy-night essential. 🥥", tag: "Loved" },
+  { n: "03", title: "Wild Berry Orchard ×2", desc: "The signature: raspberry, strawberry & prosecco. Juicy. 🍓", tag: "Signature" },
+  { n: "04", title: "Fig Noir ×2", desc: "Bold after-dark fragrance with main-character energy. 🌒", tag: "Bold" },
 ];
 
 export function Collection() {
@@ -72,7 +72,7 @@ export function Collection() {
               </div>
               <h3 className="mt-4 font-display text-lg leading-tight">{c.title}</h3>
               <p className="mt-2 text-sm text-espresso/65">{c.desc}</p>
-              <p className="mt-4 text-xs italic text-espresso/45">Duo names are concept placeholders — final names TBC.</p>
+              <p className="mt-4 text-xs italic text-espresso/45">Each scent ×2 — the full White Collection.</p>
             </div>
           ))}
         </div>
@@ -91,7 +91,7 @@ export function Collection() {
             Claim the bundle
           </a>
         </div>
-        <p className="mt-4 text-center text-xs text-espresso/50">* Bundle tags and duo names shown are concept placeholders.</p>
+        <p className="mt-4 text-center text-xs text-espresso/50">* Real So&rsquo;Lit scents, from @solitcandlesuk.</p>
       </div>
     </section>
   );
@@ -99,10 +99,10 @@ export function Collection() {
 
 /* ---------- Scents ---------- */
 const scents = [
-  { img: "/images/scent-vanilla.jpg", name: "Scent No. 1", mood: "Warm · Cosy · Sweet", note: "Name TBC" },
-  { img: "/images/scent-rose.jpg", name: "Scent No. 2", mood: "Floral · Romantic · Soft", note: "Name TBC" },
-  { img: "/images/lifestyle-genz.jpg", name: "Scent No. 3", mood: "Fresh · Dreamy · Clean", note: "Name TBC" },
-  { img: "/images/cta-gold.jpg", name: "Scent No. 4", mood: "Bold · Rich · Golden", note: "Name TBC" },
+  { img: "/images/scent-vanilla.jpg", name: "Citrus Rituals", mood: "Fresh · Morning · Energising", note: "The fresh-start one 🍊" },
+  { img: "/images/scent-rose.jpg", name: "Velvet Coconut", mood: "Smooth · Creamy · Dreamy", note: "Pure indulgence 🥥" },
+  { img: "/images/lifestyle-genz.jpg", name: "Wild Berry Orchard", mood: "Signature · Juicy · Vibrant", note: "Raspberry · strawberry · prosecco 🍓" },
+  { img: "/images/cta-gold.jpg", name: "Fig Noir", mood: "Bold · Rich · After-dark", note: "Main-character energy 🌒" },
 ];
 
 export function Scents() {
@@ -133,7 +133,7 @@ export function Scents() {
           ))}
         </div>
         <p className="mt-6 text-center text-sm text-espresso/55">
-          Final scent names to be confirmed by So&rsquo;Lit — shown here as numbered placeholders.
+          The four signature So&rsquo;Lit scents — as loved on @solitcandlesuk.
         </p>
       </div>
     </section>
@@ -142,12 +142,12 @@ export function Scents() {
 
 /* ---------- Why So'Lit ---------- */
 const perks = [
-  { emoji: "🕯️", title: "High fragrance load", desc: "Poured strong so the scent actually fills your room — not a whisper, a statement." },
-  { emoji: "⚖️", title: "240g of luxury", desc: "A proper, weighty candle with hours of burn time in every jar." },
-  { emoji: "👑", title: "Luxury brand feel", desc: "Gold lids, clean white glass, packaging that looks expensive on your shelf." },
-  { emoji: "🚚", title: "Free UK shipping", desc: "The full White Collection — all 8 candles — delivered free at £22.99." },
-  { emoji: "🌱", title: "Clean burn", desc: "Made for slow, even burns and cosy nights in." },
-  { emoji: "💅", title: "Gen Z approved", desc: "Trendy, vibrant, Instagram-ready — made for your feed and your flat." },
+  { emoji: "🕯️", title: "High-throw fragrance", desc: "High fragrance load poured strong — the scent actually fills your room, not a whisper, a statement." },
+  { emoji: "🌱", title: "100% soy wax", desc: "Hand-poured in Ireland with 100% natural soy wax and a double cotton wick for a clean, even burn." },
+  { emoji: "👑", title: "Luxury brand feel", desc: "Gold lids, clean white glass, gift-ready boxes that look expensive on your shelf." },
+  { emoji: "⚖️", title: "240g of glow", desc: "A proper, weighty candle with hours of burn time in every jar." },
+  { emoji: "🚚", title: "Free shipping", desc: "The full White Collection — all 8 candles — delivered free at £22.99." },
+  { emoji: "🇮🇪", title: "Handcrafted in Ireland", desc: "Every So'Lit candle is hand-poured in Belfast, Northern Ireland — know exactly where your candle comes from." },
 ];
 
 export function Why() {
