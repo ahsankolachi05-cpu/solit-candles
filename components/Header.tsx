@@ -5,7 +5,7 @@ import { useState } from "react";
 const links = [
   { label: "Collection", href: "#collection" },
   { label: "Scents", href: "#scents" },
-  { label: "Why So'Lit", href: "#why" },
+  { label: "Our Craft", href: "#craft" },
   { label: "Reviews", href: "#reviews" },
   { label: "Contact", href: "#contact" },
 ];
@@ -13,54 +13,62 @@ const links = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="fixed top-0 inset-x-0 z-50">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="mt-4 flex items-center justify-between rounded-2xl bg-espresso/90 px-5 py-3 shadow-xl shadow-espresso/20 backdrop-blur">
-          <a href="#top" className="flex items-center gap-2">
-            <span className="font-display text-2xl text-gold-light">
-              So&rsquo;Lit
-            </span>
-            <span className="hidden text-[11px] font-semibold uppercase tracking-[0.25em] text-cream/70 sm:inline">
-              candles
-            </span>
-          </a>
-          <nav className="hidden items-center gap-7 md:flex">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                className="text-sm font-semibold text-cream/80 transition hover:text-gold-light"
-              >
+    <header className="fixed inset-x-0 top-0 z-50">
+      <div className="bg-ink px-4 py-2 text-center">
+        <p className="eyebrow text-[10px] text-ivory/85">
+          Complimentary shipping on the White Collection&ensp;·&ensp;8 candles · £22.99
+        </p>
+      </div>
+      <div className="border-b border-line bg-ivory/90 backdrop-blur-md">
+        <div className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center px-4 py-4 sm:px-6">
+          <nav className="hidden items-center gap-7 lg:flex">
+            {links.slice(0, 3).map((l) => (
+              <a key={l.href} href={l.href} className="eyebrow text-ink/70 transition hover:text-gold-deep">
                 {l.label}
               </a>
             ))}
           </nav>
-          <div className="flex items-center gap-3">
+          <button
+            onClick={() => setOpen(!open)}
+            className="justify-self-start text-ink lg:hidden"
+            aria-label="Menu"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
+            </svg>
+          </button>
+          <a href="#top" className="justify-self-center text-center">
+            <span className="serif text-[1.7rem] font-semibold tracking-wide text-ink">
+              So&rsquo;lit
+            </span>
+            <span className="eyebrow mt-0.5 block text-[9px] text-stone">
+              Luxury Candles
+            </span>
+          </a>
+          <div className="flex items-center justify-end gap-5">
+            <nav className="hidden items-center gap-7 lg:flex">
+              {links.slice(3).map((l) => (
+                <a key={l.href} href={l.href} className="eyebrow text-ink/70 transition hover:text-gold-deep">
+                  {l.label}
+                </a>
+              ))}
+            </nav>
             <a
               href="#collection"
-              className="hidden rounded-full bg-gold px-5 py-2.5 text-sm font-bold text-espresso transition hover:bg-gold-light sm:inline-block"
+              className="rounded-full bg-ink px-6 py-2.5 text-[12px] font-semibold uppercase tracking-[0.14em] text-ivory transition hover:bg-ink-soft"
             >
-              Shop £22.99
+              Shop
             </a>
-            <button
-              onClick={() => setOpen(!open)}
-              className="text-cream md:hidden"
-              aria-label="Menu"
-            >
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <path d="M4 7h16M4 12h16M4 17h16" strokeLinecap="round" />
-              </svg>
-            </button>
           </div>
         </div>
         {open && (
-          <nav className="mt-2 rounded-2xl bg-espresso p-4 shadow-xl md:hidden">
+          <nav className="border-t border-line bg-ivory px-6 py-4 lg:hidden">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-lg px-3 py-2.5 font-semibold text-cream/90 hover:bg-white/10"
+                className="eyebrow block py-3 text-ink/75"
               >
                 {l.label}
               </a>

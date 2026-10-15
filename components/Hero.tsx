@@ -1,102 +1,52 @@
-import Image from "next/image";
-
 export default function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden bg-espresso pt-32 pb-20 sm:pt-40 sm:pb-28">
-      {/* refined gold ambience */}
-      <div className="pointer-events-none absolute -top-32 left-1/4 h-96 w-96 rounded-full bg-gold/15 blur-3xl" />
-      <div className="pointer-events-none absolute bottom-0 right-0 h-80 w-80 rounded-full bg-gold/10 blur-3xl" />
+    <section id="top" className="relative flex min-h-[100svh] items-end overflow-hidden bg-ink">
+      {/* Full-bleed real product film */}
+      <video
+        src="/videos/hero-jar.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 h-full w-full object-cover"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/25" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-        <div className="grid items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
-          {/* Left */}
-          <div>
-            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-gold/40 bg-gold/10 px-5 py-2">
-              <span className="h-2 w-2 rounded-full bg-gold-light" />
-              <span className="text-xs font-bold uppercase tracking-[0.25em] text-gold-light">
-                The White Collection — now live
-              </span>
+      <div className="relative mx-auto w-full max-w-7xl px-4 pb-20 pt-40 sm:px-6 sm:pb-28">
+        <p className="eyebrow text-gold-soft/90">Handcrafted in Belfast, Northern Ireland</p>
+        <h1 className="serif mt-5 max-w-3xl text-[clamp(3rem,8vw,5.8rem)] font-medium leading-[1.02] text-ivory">
+          The White<br />
+          <em className="font-light">Collection</em>
+        </h1>
+        <p className="serif mt-6 max-w-xl text-[1.35rem] font-light italic leading-relaxed text-ivory/80">
+          Eight luxury candles in four signature scents — poured with 100% soy wax,
+          a double cotton wick, and a fragrance throw that fills the room.
+        </p>
+        <div className="mt-9 flex flex-wrap gap-4">
+          <a
+            href="#collection"
+            className="rounded-full bg-ivory px-9 py-4 text-[13px] font-semibold uppercase tracking-[0.16em] text-ink transition hover:bg-white"
+          >
+            Shop the collection — £22.99
+          </a>
+          <a
+            href="#scents"
+            className="rounded-full border border-ivory/40 px-9 py-4 text-[13px] font-semibold uppercase tracking-[0.16em] text-ivory transition hover:border-ivory hover:bg-ivory/10"
+          >
+            Discover the scents
+          </a>
+        </div>
+        <div className="mt-14 flex flex-wrap gap-x-10 gap-y-3 border-t border-ivory/15 pt-6">
+          {[
+            ["8", "luxury candles"],
+            ["240g", "per candle"],
+            ["4", "signature scents"],
+          ].map(([v, l]) => (
+            <div key={l} className="flex items-baseline gap-3">
+              <span className="serif text-3xl text-ivory">{v}</span>
+              <span className="eyebrow text-[10px] text-ivory/60">{l}</span>
             </div>
-
-            <h1 className="font-display leading-[0.92]">
-              <span className="block text-[clamp(2.8rem,7vw,5rem)] text-cream">LUXURY CANDLES,</span>
-              <span className="block bg-gradient-to-r from-gold-light via-gold to-gold-light bg-clip-text text-[clamp(3.2rem,8vw,5.8rem)] text-transparent">
-                HANDCRAFTED IN IRELAND
-              </span>
-            </h1>
-
-            <p className="font-luxe mt-6 max-w-lg text-2xl italic leading-relaxed text-cream/80">
-              100% soy wax. Double cotton wick. High-throw fragrances — poured to fill your whole space.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#collection"
-                className="rounded-full bg-gold px-8 py-4 font-display text-sm uppercase tracking-wide text-espresso shadow-lg shadow-gold/25 transition hover:-translate-y-0.5 hover:bg-gold-light"
-              >
-                Shop — £22.99
-              </a>
-              <a
-                href="#scents"
-                className="rounded-full border border-cream/25 px-8 py-4 font-display text-sm uppercase tracking-wide text-cream transition hover:border-gold-light hover:text-gold-light"
-              >
-                The four scents
-              </a>
-            </div>
-
-            <div className="mt-10 grid max-w-lg grid-cols-3 gap-6 border-t border-cream/10 pt-8">
-              {[
-                ["8", "candles"],
-                ["240g", "each"],
-                ["£22.99", "free shipping"],
-              ].map(([v, l]) => (
-                <div key={l}>
-                  <p className="font-display text-3xl text-gold-light">{v}</p>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-cream/55">{l}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Right: real product video + real packaging — equal widths, equal heights */}
-          <div className="relative">
-            <div className="grid grid-cols-2 items-stretch gap-4">
-              <div className="aspect-[3/4] overflow-hidden rounded-3xl border border-gold/30 shadow-2xl">
-                <video
-                  src="/videos/hero-jar.mp4"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="h-full w-full object-cover"
-                />
-              </div>
-              <div className="flex min-h-0 flex-col gap-4">
-                <div className="relative min-h-0 flex-1 overflow-hidden rounded-3xl border border-gold/30 shadow-2xl">
-                  <Image
-                    src="/images/insta-box.jpg"
-                    alt="So'Lit luxury candle gift box"
-                    fill
-                    className="object-cover"
-                  />
-                  <span className="absolute left-3 top-3 rounded-full bg-espresso/85 px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-gold-light backdrop-blur">
-                    Real product
-                  </span>
-                </div>
-                <div className="relative min-h-0 flex-1 overflow-hidden rounded-3xl border border-gold/30 shadow-2xl">
-                  <Image
-                    src="/images/insta-basket.jpg"
-                    alt="So'Lit candle in a cosy gift basket"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-gold px-6 py-3 font-display text-sm uppercase tracking-wide text-espresso shadow-xl">
-              As seen on @solitcandlesuk
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>

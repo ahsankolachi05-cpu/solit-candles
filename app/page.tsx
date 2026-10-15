@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import { Marquee, Collection, Scents, Why } from "@/components/SectionsA";
+import { Collection, Scents, Why } from "@/components/SectionsA";
 import { Amazon, Instagram, Reviews, CTA, Contact, Footer } from "@/components/SectionsB";
 
 export default function Home() {
@@ -9,7 +9,6 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
-        <Marquee />
         <Collection />
         <Scents />
         <Why />

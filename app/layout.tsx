@@ -7,9 +7,9 @@ const luxe = Cormorant_Garamond({ weight: ["500", "600", "700"], style: ["normal
 const body = Inter({ subsets: ["latin"], variable: "--font-body" });
 
 export const metadata: Metadata = {
-  title: "So'Lit Candles — Luxury Candles for the Gen Z Glow-Up",
+  title: "So'Lit Candles — Luxury Hand-Poured Candles from Belfast",
   description:
-    "So'Lit Candles launches the White Collection: eight luxury 240g high-fragrance candles for £22.99 with free UK shipping. Trendy, vibrant, unapologetically lit.",
+    "The White Collection: eight luxury 240g candles in four signature scents — Citrus Rituals, Velvet Coconut, Wild Berry Orchard and Fig Noir. £22.99 with complimentary shipping. Hand-poured in Northern Ireland with 100% soy wax.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
